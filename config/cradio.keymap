@@ -1,5 +1,5 @@
 // Copyright (c) 2022 The ZMK Contributors 
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT you
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -81,14 +81,14 @@
            &kp N1     &kp N2     &kp N3     &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CLEAR BT │  BT NEXT │          │          │          │   │          │          │          │          │          │
-           &bt BT_CLR &bt BT_NXT &none      &none      &none          &none      &none      &none      &kp F11    &kp F12
+           &bt BT_CLR &bt BT_NXT &bt BT_SEL 0      &bt BT_SEL 1    &none      &none      &none      &none     &bootloader      &none          &none      &none      &none      &kp F11    &kp F12
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &kp LALT    &kp k_CONTEXT_MENU         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
-        tri_layer {
+        tri_layer {1
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │

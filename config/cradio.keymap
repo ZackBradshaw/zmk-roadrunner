@@ -66,7 +66,7 @@
         //│          │          │          │          │          │   │          │    ` ~   │    - _   │    = +   │   \ |    │
            &kp LSHIFT     &kp LEFT    &kp DOWN &kp RIGHT &kp RCTRL          &kp RCTRL      &kp GRAVE  &kp MINUS  &kp EQUAL  &kp BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp Hyper     &kp LSHIFT     &kp RGUI      &kp LALT
+                                           &ht LC(LA(LS)) &kp LSHIFT     &kp RGUI      &kp LALT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };

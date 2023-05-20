@@ -83,7 +83,7 @@
         //│ CLEAR BT │  BT NEXT │          │          │          │   │          │          │          │          │          │
            &bt BT_CLR &bt BT_NXT &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &reset  &bootloader   &none      &kp F11    &kp F12
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp LALT     &ht LC(LA(LS)) &trans     &trans
+                                            &kp LALT     &ht LC(LA(LS)) &kp DEL     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };

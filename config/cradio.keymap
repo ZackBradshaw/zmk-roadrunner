@@ -24,7 +24,15 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+      // Assuming "lt" is a custom or suitably configured behavior
+        layer_toggle_steno: lt {
+            compatible = "zmk,behavior-layer-toggle";
+            label = "Toggle Steno Layer";
+            #binding-cells = <1>;
+            layer = <STENO_LAYER>;
+        };
     };
+/ {
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -46,7 +54,7 @@
            &kp A      &kp S         &kp D         &kp F       &kp G          &kp H      &kp J      &kp K         &kp L       &kp SEMICOLON
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-           &kp Z      &kp X      &kp C      &kp V      CTRL(B)          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+           &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &layer_toggle_steno(FSLH)
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &lt 1 TAB  SHIFT(SPACE)   CTRL(ENTER) &lt 2 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -104,5 +112,23 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
+        steno_layer: layer {
+            bindings = <
+                // Stenography key layout (Plover/TX Bolt protocol)
+                //╭─────────┬─────────┬─────────┬─────────┬─────────╮   ╭─────────┬─────────┬─────────┬─────────┬─────────╮
+                //│ STN_NUM │ STN_NUM │ STN_NUM │ STN_NUM │ STN_NUM │   │ STN_NUM │ STN_NUM │ STN_NUM │ STN_NUM │ STN_NUM │
+                   &steno STN_NUM  &steno STN_NUM  &steno STN_NUM  &steno STN_NUM  &steno STN_NUM  &steno STN_NUM  &steno STN_NUM  &steno STN_NUM  &steno STN_NUM  &steno STN_NUM
+                //├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
+                //│ STN_S1  │ STN_TL  │ STN_PL  │ STN_HL  │ STN_ST1 │   │ STN_ST3 │ STN_FR  │ STN_PR  │ STN_LR  │ STN_TR  │
+                   &steno STN_S1   &steno STN_TL   &steno STN_PL   &steno STN_HL   &steno STN_ST1  &steno STN_ST3  &steno STN_FR   &steno STN_PR   &steno STN_LR   &steno STN_TR
+                //├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
+                //│ STN_A   │ STN_O   │         │         │ STN_E   │   │ STN_U   │         │         │ STN_EU  │ STN_NUM │
+                     &none       &none    &none       &none           &none    &none    &none           &none           &steno STN_EU   &layer_toggle_steno
+                //╰─────────┴─────────┴─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┴─────────┴─────────╯
+                                                &steno STN_A     &steno STN_O     &steno STN_E &steno STN_U
+                //                              ╰─────────┴─────────╯   ╰─────────┴─────────╯
+            >;
+};
+
     };
 };

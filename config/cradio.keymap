@@ -29,7 +29,7 @@
             compatible = "zmk,behavior-layer-toggle";
             label = "Toggle Steno Layer";
             #binding-cells = <1>;
-            layer = <STENO_LAYER>;
+            layer = <steno_layer>;
         };
     };
 / {

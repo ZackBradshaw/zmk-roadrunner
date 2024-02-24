@@ -12,7 +12,6 @@
 #define SHIFT(k1) &ht LSHFT k1
 #define CTRL(k1) &ht LCTRL k1
 
-/ {
     behaviors {
         ht: hold_tap {
             label = "hold_tap";
@@ -32,7 +31,6 @@
             layer = "steno_layer";
         };
     };
-/ {
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
